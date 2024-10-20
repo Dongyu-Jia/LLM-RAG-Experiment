@@ -4,6 +4,7 @@
 
 *  [Reinforcement learning, PPO and DPO](https://www.youtube.com/watch?v=SgC6AZss478&list=PLs8w1Cdi-zvYviYYw_V3qe6SINReGF5M-)
 *  [LLM](https://www.youtube.com/watch?v=OxCpWwDCDFQ&list=PLs8w1Cdi-zvYskDS2icIItfZgxclApVLv)
+*  [Tutiroal for Rag with Ray](https://github.com/ray-project/llm-applications/blob/main/notebooks/rag.ipynb)
 
 # Github resources 
 
