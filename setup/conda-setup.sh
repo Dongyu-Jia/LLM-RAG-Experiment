@@ -42,13 +42,17 @@ else
 fi
 
 source ~/.bashrc  # Activate conda
-conda init bash
+$HOME/miniconda/bin/conda init bash
 
 # Check if the 'rag' conda environment exists
 if ! $HOME/miniconda/bin/conda env list | grep -q '^rag\s'; then
     # Create conda environment from env.yaml
     $HOME/miniconda/bin/conda env create -f setup/env.yaml
 fi
+
+$HOME/miniconda/bin/conda env update --file setup/env.yaml --name rag
+
+$HOME/miniconda/bin/conda env export > setup/environment_snapshot_backup.yml  
 
 $HOME/miniconda/bin/conda info --envs
 
