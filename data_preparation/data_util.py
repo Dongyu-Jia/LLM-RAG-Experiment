@@ -1,9 +1,21 @@
 import os
+from pathlib import Path
 import markdown
 from bs4 import BeautifulSoup
-
-from pathlib import Path
+from functools import partial
 import ray
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+def chunk_section(section, chunk_size, chunk_overlap):
+    text_splitter = RecursiveCharacterTextSplitter(
+        separators=["\n\n", "\n", " ", ""],
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
+        length_function=len)
+    chunks = text_splitter.create_documents(
+        texts=[section["text"]], 
+        metadatas=[{"source": section["path"], 'heading': section['heading'], 'parent_headings': section['parent_headings'], 'children_headings': section['children_headings']}])
+    return [{"text": chunk.page_content, "source": chunk.metadata["source"], "heading": chunk.metadata["heading"]} for chunk in chunks]
 
 def convert_folder_to_sections(folder_path:str, patterns: list[str]=[ '*.md'] ):
     DOCS_DIR = Path(folder_path)
