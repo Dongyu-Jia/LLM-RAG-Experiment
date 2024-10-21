@@ -1,7 +1,7 @@
 
 # Set up vscode with a dev machine on AWS
 
-1. Create a dev machine(t3a.xlarge), and find ssh connection information:
+1. Create a dev machine(t3a.xlarge), and find ssh connection information. ![SSHINfo](sshinfo.png)
 1. Note that such dev machine is around 4$ per day or 0.16$ per hour, so shutdown the machine when you exit your work and restart the instance when you gonna work, a smaller machine is not worth it as smaller machine can easily stuck and lost ssh connection completely.
 1. Use VScode and connect to the EC2 instance, follow [this guide](https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff).
 1. Some extensions are needed: Github Copilot, Remote SSH(Microsoft), Jupyter(Microsoft), Markdown All in One, Python(Microsoft)
