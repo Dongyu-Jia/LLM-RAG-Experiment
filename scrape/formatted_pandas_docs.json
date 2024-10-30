@@ -1,0 +1,2244 @@
+{
+    "conversations": [
+        [
+            {
+                "role": "user",
+                "content": "DataFrame([data,\u00a0index,\u00a0columns,\u00a0dtype,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Two-dimensional, size-mutable, potentially heterogeneous tabular data."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.index"
+            },
+            {
+                "role": "assistant",
+                "content": "The index (row labels) of the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.columns"
+            },
+            {
+                "role": "assistant",
+                "content": "The column labels of the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.dtypes"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the dtypes in the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.info([verbose,\u00a0buf,\u00a0max_cols,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Print a concise summary of a DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.select_dtypes([include,\u00a0exclude])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a subset of the DataFrame's columns based on the column dtypes."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.values"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a Numpy representation of the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.axes"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a list representing the axes of the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.ndim"
+            },
+            {
+                "role": "assistant",
+                "content": "Return an int representing the number of axes / array dimensions."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.size"
+            },
+            {
+                "role": "assistant",
+                "content": "Return an int representing the number of elements in this object."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.shape"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a tuple representing the dimensionality of the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.memory_usage([index,\u00a0deep])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the memory usage of each column in bytes."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.empty"
+            },
+            {
+                "role": "assistant",
+                "content": "Indicator whether Series/DataFrame is empty."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.set_flags(*[,\u00a0copy,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a new object with updated flags."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.astype(dtype[,\u00a0copy,\u00a0errors])"
+            },
+            {
+                "role": "assistant",
+                "content": "Cast a pandas object to a specified dtypedtype."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.convert_dtypes([infer_objects,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert columns to the best possible dtypes using dtypes supportingpd.NA."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.infer_objects([copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Attempt to infer better dtypes for object columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.copy([deep])"
+            },
+            {
+                "role": "assistant",
+                "content": "Make a copy of this object's indices and data."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.bool()"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Return the bool of a single element Series or DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_numpy([dtype,\u00a0copy,\u00a0na_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert the DataFrame to a NumPy array."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.head([n])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the firstnrows."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.at"
+            },
+            {
+                "role": "assistant",
+                "content": "Access a single value for a row/column label pair."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.iat"
+            },
+            {
+                "role": "assistant",
+                "content": "Access a single value for a row/column pair by integer position."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.loc"
+            },
+            {
+                "role": "assistant",
+                "content": "Access a group of rows and columns by label(s) or a boolean array."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.iloc"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Purely integer-location based indexing for selection by position."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.insert(loc,\u00a0column,\u00a0value[,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Insert column into DataFrame at specified location."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.__iter__()"
+            },
+            {
+                "role": "assistant",
+                "content": "Iterate over info axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.items()"
+            },
+            {
+                "role": "assistant",
+                "content": "Iterate over (column name, Series) pairs."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.keys()"
+            },
+            {
+                "role": "assistant",
+                "content": "Get the 'info axis' (see Indexing for more)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.iterrows()"
+            },
+            {
+                "role": "assistant",
+                "content": "Iterate over DataFrame rows as (index, Series) pairs."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.itertuples([index,\u00a0name])"
+            },
+            {
+                "role": "assistant",
+                "content": "Iterate over DataFrame rows as namedtuples."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.pop(item)"
+            },
+            {
+                "role": "assistant",
+                "content": "Return item and drop from frame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.tail([n])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the lastnrows."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.xs(key[,\u00a0axis,\u00a0level,\u00a0drop_level])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return cross-section from the Series/DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.get(key[,\u00a0default])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get item from object for given key (ex: DataFrame column)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.isin(values)"
+            },
+            {
+                "role": "assistant",
+                "content": "Whether each element in the DataFrame is contained in values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.where(cond[,\u00a0other,\u00a0inplace,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Replace values where the condition is False."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.mask(cond[,\u00a0other,\u00a0inplace,\u00a0axis,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Replace values where the condition is True."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.query(expr,\u00a0*[,\u00a0inplace])"
+            },
+            {
+                "role": "assistant",
+                "content": "Query the columns of a DataFrame with a boolean expression."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.__add__(other)"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Addition of DataFrame and other, column-wise."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.add(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Addition of dataframe and other, element-wise (binary operatoradd)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sub(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Subtraction of dataframe and other, element-wise (binary operatorsub)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.mul(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Multiplication of dataframe and other, element-wise (binary operatormul)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.div(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Floating division of dataframe and other, element-wise (binary operatortruediv)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.truediv(other[,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Floating division of dataframe and other, element-wise (binary operatortruediv)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.floordiv(other[,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Integer division of dataframe and other, element-wise (binary operatorfloordiv)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.mod(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Modulo of dataframe and other, element-wise (binary operatormod)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.pow(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Exponential power of dataframe and other, element-wise (binary operatorpow)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.dot(other)"
+            },
+            {
+                "role": "assistant",
+                "content": "Compute the matrix multiplication between the DataFrame and other."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.radd(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Addition of dataframe and other, element-wise (binary operatorradd)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rsub(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Subtraction of dataframe and other, element-wise (binary operatorrsub)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rmul(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Multiplication of dataframe and other, element-wise (binary operatorrmul)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rdiv(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Floating division of dataframe and other, element-wise (binary operatorrtruediv)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rtruediv(other[,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Floating division of dataframe and other, element-wise (binary operatorrtruediv)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rfloordiv(other[,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Integer division of dataframe and other, element-wise (binary operatorrfloordiv)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rmod(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Modulo of dataframe and other, element-wise (binary operatorrmod)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rpow(other[,\u00a0axis,\u00a0level,\u00a0fill_value])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Exponential power of dataframe and other, element-wise (binary operatorrpow)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.lt(other[,\u00a0axis,\u00a0level])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Less than of dataframe and other, element-wise (binary operatorlt)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.gt(other[,\u00a0axis,\u00a0level])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Greater than of dataframe and other, element-wise (binary operatorgt)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.le(other[,\u00a0axis,\u00a0level])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Less than or equal to of dataframe and other, element-wise (binary operatorle)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.ge(other[,\u00a0axis,\u00a0level])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Greater than or equal to of dataframe and other, element-wise (binary operatorge)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.ne(other[,\u00a0axis,\u00a0level])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Not equal to of dataframe and other, element-wise (binary operatorne)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.eq(other[,\u00a0axis,\u00a0level])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get Equal to of dataframe and other, element-wise (binary operatoreq)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.combine(other,\u00a0func[,\u00a0fill_value,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Perform column-wise combine with another DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.combine_first(other)"
+            },
+            {
+                "role": "assistant",
+                "content": "Update null elements with value in the same location inother."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.apply(func[,\u00a0axis,\u00a0raw,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Apply a function along an axis of the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.map(func[,\u00a0na_action])"
+            },
+            {
+                "role": "assistant",
+                "content": "Apply a function to a Dataframe elementwise."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.applymap(func[,\u00a0na_action])"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Apply a function to a Dataframe elementwise."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.pipe(func,\u00a0*args,\u00a0**kwargs)"
+            },
+            {
+                "role": "assistant",
+                "content": "Apply chainable functions that expect Series or DataFrames."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.agg([func,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Aggregate using one or more operations over the specified axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.aggregate([func,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Aggregate using one or more operations over the specified axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.transform(func[,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Callfuncon self producing a DataFrame with the same axis shape as self."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.groupby([by,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Group DataFrame using a mapper or by a Series of columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rolling(window[,\u00a0min_periods,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Provide rolling window calculations."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.expanding([min_periods,\u00a0axis,\u00a0method])"
+            },
+            {
+                "role": "assistant",
+                "content": "Provide expanding window calculations."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.ewm([com,\u00a0span,\u00a0halflife,\u00a0alpha,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Provide exponentially weighted (EW) calculations."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.abs()"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a Series/DataFrame with absolute numeric value of each element."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.all([axis,\u00a0bool_only,\u00a0skipna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return whether all elements are True, potentially over an axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.any(*[,\u00a0axis,\u00a0bool_only,\u00a0skipna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return whether any element is True, potentially over an axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.clip([lower,\u00a0upper,\u00a0axis,\u00a0inplace])"
+            },
+            {
+                "role": "assistant",
+                "content": "Trim values at input threshold(s)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.corr([method,\u00a0min_periods,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Compute pairwise correlation of columns, excluding NA/null values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.corrwith(other[,\u00a0axis,\u00a0drop,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Compute pairwise correlation."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.count([axis,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Count non-NA cells for each column or row."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.cov([min_periods,\u00a0ddof,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Compute pairwise covariance of columns, excluding NA/null values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.cummax([axis,\u00a0skipna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return cumulative maximum over a DataFrame or Series axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.cummin([axis,\u00a0skipna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return cumulative minimum over a DataFrame or Series axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.cumprod([axis,\u00a0skipna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return cumulative product over a DataFrame or Series axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.cumsum([axis,\u00a0skipna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return cumulative sum over a DataFrame or Series axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.describe([percentiles,\u00a0include,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Generate descriptive statistics."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.diff([periods,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "First discrete difference of element."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.eval(expr,\u00a0*[,\u00a0inplace])"
+            },
+            {
+                "role": "assistant",
+                "content": "Evaluate a string describing operations on DataFrame columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.kurt([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return unbiased kurtosis over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.kurtosis([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return unbiased kurtosis over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.max([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the maximum of the values over the requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.mean([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the mean of the values over the requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.median([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the median of the values over the requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.min([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the minimum of the values over the requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.mode([axis,\u00a0numeric_only,\u00a0dropna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Get the mode(s) of each element along the selected axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.pct_change([periods,\u00a0fill_method,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Fractional change between the current and a prior element."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.prod([axis,\u00a0skipna,\u00a0numeric_only,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the product of the values over the requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.product([axis,\u00a0skipna,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the product of the values over the requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.quantile([q,\u00a0axis,\u00a0numeric_only,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return values at the given quantile over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rank([axis,\u00a0method,\u00a0numeric_only,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Compute numerical data ranks (1 through n) along axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.round([decimals])"
+            },
+            {
+                "role": "assistant",
+                "content": "Round a DataFrame to a variable number of decimal places."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sem([axis,\u00a0skipna,\u00a0ddof,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return unbiased standard error of the mean over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.skew([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return unbiased skew over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sum([axis,\u00a0skipna,\u00a0numeric_only,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the sum of the values over the requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.std([axis,\u00a0skipna,\u00a0ddof,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return sample standard deviation over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.var([axis,\u00a0skipna,\u00a0ddof,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return unbiased variance over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.nunique([axis,\u00a0dropna])"
+            },
+            {
+                "role": "assistant",
+                "content": "Count number of distinct elements in specified axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.value_counts([subset,\u00a0normalize,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a Series containing the frequency of each distinct row in the Dataframe."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.add_prefix(prefix[,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Prefix labels with stringprefix."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.add_suffix(suffix[,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Suffix labels with stringsuffix."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.align(other[,\u00a0join,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Align two objects on their axes with the specified join method."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.at_time(time[,\u00a0asof,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Select values at particular time of day (e.g., 9:30AM)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.between_time(start_time,\u00a0end_time)"
+            },
+            {
+                "role": "assistant",
+                "content": "Select values between particular times of the day (e.g., 9:00-9:30 AM)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.drop([labels,\u00a0axis,\u00a0index,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Drop specified labels from rows or columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.drop_duplicates([subset,\u00a0keep,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return DataFrame with duplicate rows removed."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.duplicated([subset,\u00a0keep])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return boolean Series denoting duplicate rows."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.equals(other)"
+            },
+            {
+                "role": "assistant",
+                "content": "Test whether two objects contain the same elements."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.filter([items,\u00a0like,\u00a0regex,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Subset the dataframe rows or columns according to the specified index labels."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.first(offset)"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Select initial periods of time series data based on a date offset."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.head([n])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the firstnrows."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.idxmax([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return index of first occurrence of maximum over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.idxmin([axis,\u00a0skipna,\u00a0numeric_only])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return index of first occurrence of minimum over requested axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.last(offset)"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Select final periods of time series data based on a date offset."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.reindex([labels,\u00a0index,\u00a0columns,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Conform DataFrame to new index with optional filling logic."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.reindex_like(other[,\u00a0method,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return an object with matching indices as other object."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rename([mapper,\u00a0index,\u00a0columns,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Rename columns or index labels."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.rename_axis([mapper,\u00a0index,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Set the name of the axis for the index or columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.reset_index([level,\u00a0drop,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Reset the index, or a level of it."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sample([n,\u00a0frac,\u00a0replace,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return a random sample of items from an axis of object."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.set_axis(labels,\u00a0*[,\u00a0axis,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Assign desired index to given axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.set_index(keys,\u00a0*[,\u00a0drop,\u00a0append,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Set the DataFrame index using existing columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.tail([n])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the lastnrows."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.take(indices[,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the elements in the givenpositionalindices along an axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.truncate([before,\u00a0after,\u00a0axis,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Truncate a Series or DataFrame before and after some index value."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.backfill(*[,\u00a0axis,\u00a0inplace,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Fill NA/NaN values by using the next valid observation to fill the gap."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.bfill(*[,\u00a0axis,\u00a0inplace,\u00a0limit,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Fill NA/NaN values by using the next valid observation to fill the gap."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.dropna(*[,\u00a0axis,\u00a0how,\u00a0thresh,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Remove missing values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.ffill(*[,\u00a0axis,\u00a0inplace,\u00a0limit,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Fill NA/NaN values by propagating the last valid observation to next valid."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.fillna([value,\u00a0method,\u00a0axis,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Fill NA/NaN values using the specified method."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.interpolate([method,\u00a0axis,\u00a0limit,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Fill NaN values using an interpolation method."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.isna()"
+            },
+            {
+                "role": "assistant",
+                "content": "Detect missing values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.isnull()"
+            },
+            {
+                "role": "assistant",
+                "content": "DataFrame.isnull is an alias for DataFrame.isna."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.notna()"
+            },
+            {
+                "role": "assistant",
+                "content": "Detect existing (non-missing) values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.notnull()"
+            },
+            {
+                "role": "assistant",
+                "content": "DataFrame.notnull is an alias for DataFrame.notna."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.pad(*[,\u00a0axis,\u00a0inplace,\u00a0limit,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Fill NA/NaN values by propagating the last valid observation to next valid."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.replace([to_replace,\u00a0value,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Replace values given into_replacewithvalue."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.droplevel(level[,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return Series/DataFrame with requested index / column level(s) removed."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.pivot(*,\u00a0columns[,\u00a0index,\u00a0values])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return reshaped DataFrame organized by given index / column values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.pivot_table([values,\u00a0index,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Create a spreadsheet-style pivot table as a DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.reorder_levels(order[,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Rearrange index levels using input order."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sort_values(by,\u00a0*[,\u00a0axis,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Sort by the values along either axis."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sort_index(*[,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Sort object by labels (along an axis)."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.nlargest(n,\u00a0columns[,\u00a0keep])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the firstnrows ordered bycolumnsin descending order."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.nsmallest(n,\u00a0columns[,\u00a0keep])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the firstnrows ordered bycolumnsin ascending order."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.swaplevel([i,\u00a0j,\u00a0axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Swap levels i and j in aMultiIndex."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.stack([level,\u00a0dropna,\u00a0sort,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Stack the prescribed level(s) from columns to index."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.unstack([level,\u00a0fill_value,\u00a0sort])"
+            },
+            {
+                "role": "assistant",
+                "content": "Pivot a level of the (necessarily hierarchical) index labels."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.swapaxes(axis1,\u00a0axis2[,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Interchange axes and swap values axes appropriately."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.melt([id_vars,\u00a0value_vars,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Unpivot a DataFrame from wide to long format, optionally leaving identifiers set."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.explode(column[,\u00a0ignore_index])"
+            },
+            {
+                "role": "assistant",
+                "content": "Transform each element of a list-like to a row, replicating index values."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.squeeze([axis])"
+            },
+            {
+                "role": "assistant",
+                "content": "Squeeze 1 dimensional axis objects into scalars."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_xarray()"
+            },
+            {
+                "role": "assistant",
+                "content": "Return an xarray object from the pandas object."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.T"
+            },
+            {
+                "role": "assistant",
+                "content": "The transpose of the DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.transpose(*args[,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Transpose index and columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.assign(**kwargs)"
+            },
+            {
+                "role": "assistant",
+                "content": "Assign new columns to a DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.compare(other[,\u00a0align_axis,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Compare to another DataFrame and show the differences."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.join(other[,\u00a0on,\u00a0how,\u00a0lsuffix,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Join columns of another DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.merge(right[,\u00a0how,\u00a0on,\u00a0left_on,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Merge DataFrame or named Series objects with a database-style join."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.update(other[,\u00a0join,\u00a0overwrite,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Modify in place using non-NA values from another DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.asfreq(freq[,\u00a0method,\u00a0how,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert time series to specified frequency."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.asof(where[,\u00a0subset])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the last row(s) without any NaNs beforewhere."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.shift([periods,\u00a0freq,\u00a0axis,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Shift index by desired number of periods with an optional timefreq."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.first_valid_index()"
+            },
+            {
+                "role": "assistant",
+                "content": "Return index for first non-NA value or None, if no non-NA value is found."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.last_valid_index()"
+            },
+            {
+                "role": "assistant",
+                "content": "Return index for last non-NA value or None, if no non-NA value is found."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.resample(rule[,\u00a0axis,\u00a0closed,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Resample time-series data."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_period([freq,\u00a0axis,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert DataFrame from DatetimeIndex to PeriodIndex."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_timestamp([freq,\u00a0how,\u00a0axis,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Cast to DatetimeIndex of timestamps, atbeginningof period."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.tz_convert(tz[,\u00a0axis,\u00a0level,\u00a0copy])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert tz-aware axis to target time zone."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.tz_localize(tz[,\u00a0axis,\u00a0level,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Localize tz-naive index of a Series or DataFrame to target time zone."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "Flags(obj,\u00a0*,\u00a0allows_duplicate_labels)"
+            },
+            {
+                "role": "assistant",
+                "content": "Flags that apply to pandas objects."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.attrs"
+            },
+            {
+                "role": "assistant",
+                "content": "Dictionary of global attributes of this dataset."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot([x,\u00a0y,\u00a0kind,\u00a0ax,\u00a0....])"
+            },
+            {
+                "role": "assistant",
+                "content": "DataFrame plotting accessor and method"
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.area([x,\u00a0y,\u00a0stacked])"
+            },
+            {
+                "role": "assistant",
+                "content": "Draw a stacked area plot."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.bar([x,\u00a0y])"
+            },
+            {
+                "role": "assistant",
+                "content": "Vertical bar plot."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.barh([x,\u00a0y])"
+            },
+            {
+                "role": "assistant",
+                "content": "Make a horizontal bar plot."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.box([by])"
+            },
+            {
+                "role": "assistant",
+                "content": "Make a box plot of the DataFrame columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.density([bw_method,\u00a0ind])"
+            },
+            {
+                "role": "assistant",
+                "content": "Generate Kernel Density Estimate plot using Gaussian kernels."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.hexbin(x,\u00a0y[,\u00a0C,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Generate a hexagonal binning plot."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.hist([by,\u00a0bins])"
+            },
+            {
+                "role": "assistant",
+                "content": "Draw one histogram of the DataFrame's columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.kde([bw_method,\u00a0ind])"
+            },
+            {
+                "role": "assistant",
+                "content": "Generate Kernel Density Estimate plot using Gaussian kernels."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.line([x,\u00a0y])"
+            },
+            {
+                "role": "assistant",
+                "content": "Plot Series or DataFrame as lines."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.pie(**kwargs)"
+            },
+            {
+                "role": "assistant",
+                "content": "Generate a pie plot."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.plot.scatter(x,\u00a0y[,\u00a0s,\u00a0c])"
+            },
+            {
+                "role": "assistant",
+                "content": "Create a scatter plot with varying marker point size and color."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.boxplot([column,\u00a0by,\u00a0ax,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Make a box plot from DataFrame columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.hist([column,\u00a0by,\u00a0grid,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Make a histogram of the DataFrame's columns."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sparse.density"
+            },
+            {
+                "role": "assistant",
+                "content": "Ratio of non-sparse points to total (dense) data points."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sparse.from_spmatrix(data[,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Create a new DataFrame from a scipy sparse matrix."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sparse.to_coo()"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the contents of the frame as a sparse SciPy COO matrix."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.sparse.to_dense()"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert a DataFrame with sparse values to dense."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.from_dict(data[,\u00a0orient,\u00a0dtype,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Construct DataFrame from dict of array-like or dicts."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.from_records(data[,\u00a0index,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert structured or record ndarray to DataFrame."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_orc([path,\u00a0engine,\u00a0index,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Write a DataFrame to the ORC format."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_parquet([path,\u00a0engine,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Write a DataFrame to the binary parquet format."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_pickle(path,\u00a0*[,\u00a0compression,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Pickle (serialize) object to file."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_csv([path_or_buf,\u00a0sep,\u00a0na_rep,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Write object to a comma-separated values (csv) file."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_hdf(path_or_buf,\u00a0*,\u00a0key[,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Write the contained data to an HDF5 file using HDFStore."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_sql(name,\u00a0con,\u00a0*[,\u00a0schema,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Write records stored in a DataFrame to a SQL database."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_dict([orient,\u00a0into,\u00a0index])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert the DataFrame to a dictionary."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_excel(excel_writer,\u00a0*[,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Write object to an Excel sheet."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_json([path_or_buf,\u00a0orient,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert the object to a JSON string."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_html([buf,\u00a0columns,\u00a0col_space,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Render a DataFrame as an HTML table."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_feather(path,\u00a0**kwargs)"
+            },
+            {
+                "role": "assistant",
+                "content": "Write a DataFrame to the binary Feather format."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_latex([buf,\u00a0columns,\u00a0header,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Render object to a LaTeX tabular, longtable, or nested table."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_stata(path,\u00a0*[,\u00a0convert_dates,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Export DataFrame object to Stata dta format."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_gbq(destination_table,\u00a0*[,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "(DEPRECATED) Write a DataFrame to a Google BigQuery table."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_records([index,\u00a0column_dtypes,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Convert DataFrame to a NumPy record array."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_string([buf,\u00a0columns,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Render a DataFrame to a console-friendly tabular output."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_clipboard(*[,\u00a0excel,\u00a0sep])"
+            },
+            {
+                "role": "assistant",
+                "content": "Copy object to the system clipboard."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.to_markdown([buf,\u00a0mode,\u00a0index,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Print DataFrame in Markdown-friendly format."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.style"
+            },
+            {
+                "role": "assistant",
+                "content": "Returns a Styler object."
+            }
+        ],
+        [
+            {
+                "role": "user",
+                "content": "DataFrame.__dataframe__([nan_as_null,\u00a0...])"
+            },
+            {
+                "role": "assistant",
+                "content": "Return the dataframe interchange object implementing the interchange protocol."
+            }
+        ]
+    ]
+}
