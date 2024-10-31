@@ -1,0 +1,898 @@
+[
+    {
+        "section": "DataFrame([data,\u00a0index,\u00a0columns,\u00a0dtype,\u00a0copy])",
+        "content": "Two-dimensional, size-mutable, potentially heterogeneous tabular data."
+    },
+    {
+        "section": "DataFrame.index",
+        "content": "The index (row labels) of the DataFrame."
+    },
+    {
+        "section": "DataFrame.columns",
+        "content": "The column labels of the DataFrame."
+    },
+    {
+        "section": "DataFrame.dtypes",
+        "content": "Return the dtypes in the DataFrame."
+    },
+    {
+        "section": "DataFrame.info([verbose,\u00a0buf,\u00a0max_cols,\u00a0...])",
+        "content": "Print a concise summary of a DataFrame."
+    },
+    {
+        "section": "DataFrame.select_dtypes([include,\u00a0exclude])",
+        "content": "Return a subset of the DataFrame's columns based on the column dtypes."
+    },
+    {
+        "section": "DataFrame.values",
+        "content": "Return a Numpy representation of the DataFrame."
+    },
+    {
+        "section": "DataFrame.axes",
+        "content": "Return a list representing the axes of the DataFrame."
+    },
+    {
+        "section": "DataFrame.ndim",
+        "content": "Return an int representing the number of axes / array dimensions."
+    },
+    {
+        "section": "DataFrame.size",
+        "content": "Return an int representing the number of elements in this object."
+    },
+    {
+        "section": "DataFrame.shape",
+        "content": "Return a tuple representing the dimensionality of the DataFrame."
+    },
+    {
+        "section": "DataFrame.memory_usage([index,\u00a0deep])",
+        "content": "Return the memory usage of each column in bytes."
+    },
+    {
+        "section": "DataFrame.empty",
+        "content": "Indicator whether Series/DataFrame is empty."
+    },
+    {
+        "section": "DataFrame.set_flags(*[,\u00a0copy,\u00a0...])",
+        "content": "Return a new object with updated flags."
+    },
+    {
+        "section": "DataFrame.astype(dtype[,\u00a0copy,\u00a0errors])",
+        "content": "Cast a pandas object to a specified dtypedtype."
+    },
+    {
+        "section": "DataFrame.convert_dtypes([infer_objects,\u00a0...])",
+        "content": "Convert columns to the best possible dtypes using dtypes supportingpd.NA."
+    },
+    {
+        "section": "DataFrame.infer_objects([copy])",
+        "content": "Attempt to infer better dtypes for object columns."
+    },
+    {
+        "section": "DataFrame.copy([deep])",
+        "content": "Make a copy of this object's indices and data."
+    },
+    {
+        "section": "DataFrame.bool()",
+        "content": "(DEPRECATED) Return the bool of a single element Series or DataFrame."
+    },
+    {
+        "section": "DataFrame.to_numpy([dtype,\u00a0copy,\u00a0na_value])",
+        "content": "Convert the DataFrame to a NumPy array."
+    },
+    {
+        "section": "DataFrame.head([n])",
+        "content": "Return the firstnrows."
+    },
+    {
+        "section": "DataFrame.at",
+        "content": "Access a single value for a row/column label pair."
+    },
+    {
+        "section": "DataFrame.iat",
+        "content": "Access a single value for a row/column pair by integer position."
+    },
+    {
+        "section": "DataFrame.loc",
+        "content": "Access a group of rows and columns by label(s) or a boolean array."
+    },
+    {
+        "section": "DataFrame.iloc",
+        "content": "(DEPRECATED) Purely integer-location based indexing for selection by position."
+    },
+    {
+        "section": "DataFrame.insert(loc,\u00a0column,\u00a0value[,\u00a0...])",
+        "content": "Insert column into DataFrame at specified location."
+    },
+    {
+        "section": "DataFrame.__iter__()",
+        "content": "Iterate over info axis."
+    },
+    {
+        "section": "DataFrame.items()",
+        "content": "Iterate over (column name, Series) pairs."
+    },
+    {
+        "section": "DataFrame.keys()",
+        "content": "Get the 'info axis' (see Indexing for more)."
+    },
+    {
+        "section": "DataFrame.iterrows()",
+        "content": "Iterate over DataFrame rows as (index, Series) pairs."
+    },
+    {
+        "section": "DataFrame.itertuples([index,\u00a0name])",
+        "content": "Iterate over DataFrame rows as namedtuples."
+    },
+    {
+        "section": "DataFrame.pop(item)",
+        "content": "Return item and drop from frame."
+    },
+    {
+        "section": "DataFrame.tail([n])",
+        "content": "Return the lastnrows."
+    },
+    {
+        "section": "DataFrame.xs(key[,\u00a0axis,\u00a0level,\u00a0drop_level])",
+        "content": "Return cross-section from the Series/DataFrame."
+    },
+    {
+        "section": "DataFrame.get(key[,\u00a0default])",
+        "content": "Get item from object for given key (ex: DataFrame column)."
+    },
+    {
+        "section": "DataFrame.isin(values)",
+        "content": "Whether each element in the DataFrame is contained in values."
+    },
+    {
+        "section": "DataFrame.where(cond[,\u00a0other,\u00a0inplace,\u00a0...])",
+        "content": "Replace values where the condition is False."
+    },
+    {
+        "section": "DataFrame.mask(cond[,\u00a0other,\u00a0inplace,\u00a0axis,\u00a0...])",
+        "content": "Replace values where the condition is True."
+    },
+    {
+        "section": "DataFrame.query(expr,\u00a0*[,\u00a0inplace])",
+        "content": "Query the columns of a DataFrame with a boolean expression."
+    },
+    {
+        "section": "DataFrame.__add__(other)",
+        "content": "Get Addition of DataFrame and other, column-wise."
+    },
+    {
+        "section": "DataFrame.add(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Addition of dataframe and other, element-wise (binary operatoradd)."
+    },
+    {
+        "section": "DataFrame.sub(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Subtraction of dataframe and other, element-wise (binary operatorsub)."
+    },
+    {
+        "section": "DataFrame.mul(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Multiplication of dataframe and other, element-wise (binary operatormul)."
+    },
+    {
+        "section": "DataFrame.div(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Floating division of dataframe and other, element-wise (binary operatortruediv)."
+    },
+    {
+        "section": "DataFrame.truediv(other[,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Get Floating division of dataframe and other, element-wise (binary operatortruediv)."
+    },
+    {
+        "section": "DataFrame.floordiv(other[,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Get Integer division of dataframe and other, element-wise (binary operatorfloordiv)."
+    },
+    {
+        "section": "DataFrame.mod(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Modulo of dataframe and other, element-wise (binary operatormod)."
+    },
+    {
+        "section": "DataFrame.pow(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Exponential power of dataframe and other, element-wise (binary operatorpow)."
+    },
+    {
+        "section": "DataFrame.dot(other)",
+        "content": "Compute the matrix multiplication between the DataFrame and other."
+    },
+    {
+        "section": "DataFrame.radd(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Addition of dataframe and other, element-wise (binary operatorradd)."
+    },
+    {
+        "section": "DataFrame.rsub(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Subtraction of dataframe and other, element-wise (binary operatorrsub)."
+    },
+    {
+        "section": "DataFrame.rmul(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Multiplication of dataframe and other, element-wise (binary operatorrmul)."
+    },
+    {
+        "section": "DataFrame.rdiv(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Floating division of dataframe and other, element-wise (binary operatorrtruediv)."
+    },
+    {
+        "section": "DataFrame.rtruediv(other[,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Get Floating division of dataframe and other, element-wise (binary operatorrtruediv)."
+    },
+    {
+        "section": "DataFrame.rfloordiv(other[,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Get Integer division of dataframe and other, element-wise (binary operatorrfloordiv)."
+    },
+    {
+        "section": "DataFrame.rmod(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Modulo of dataframe and other, element-wise (binary operatorrmod)."
+    },
+    {
+        "section": "DataFrame.rpow(other[,\u00a0axis,\u00a0level,\u00a0fill_value])",
+        "content": "Get Exponential power of dataframe and other, element-wise (binary operatorrpow)."
+    },
+    {
+        "section": "DataFrame.lt(other[,\u00a0axis,\u00a0level])",
+        "content": "Get Less than of dataframe and other, element-wise (binary operatorlt)."
+    },
+    {
+        "section": "DataFrame.gt(other[,\u00a0axis,\u00a0level])",
+        "content": "Get Greater than of dataframe and other, element-wise (binary operatorgt)."
+    },
+    {
+        "section": "DataFrame.le(other[,\u00a0axis,\u00a0level])",
+        "content": "Get Less than or equal to of dataframe and other, element-wise (binary operatorle)."
+    },
+    {
+        "section": "DataFrame.ge(other[,\u00a0axis,\u00a0level])",
+        "content": "Get Greater than or equal to of dataframe and other, element-wise (binary operatorge)."
+    },
+    {
+        "section": "DataFrame.ne(other[,\u00a0axis,\u00a0level])",
+        "content": "Get Not equal to of dataframe and other, element-wise (binary operatorne)."
+    },
+    {
+        "section": "DataFrame.eq(other[,\u00a0axis,\u00a0level])",
+        "content": "Get Equal to of dataframe and other, element-wise (binary operatoreq)."
+    },
+    {
+        "section": "DataFrame.combine(other,\u00a0func[,\u00a0fill_value,\u00a0...])",
+        "content": "Perform column-wise combine with another DataFrame."
+    },
+    {
+        "section": "DataFrame.combine_first(other)",
+        "content": "Update null elements with value in the same location inother."
+    },
+    {
+        "section": "DataFrame.apply(func[,\u00a0axis,\u00a0raw,\u00a0...])",
+        "content": "Apply a function along an axis of the DataFrame."
+    },
+    {
+        "section": "DataFrame.map(func[,\u00a0na_action])",
+        "content": "Apply a function to a Dataframe elementwise."
+    },
+    {
+        "section": "DataFrame.applymap(func[,\u00a0na_action])",
+        "content": "(DEPRECATED) Apply a function to a Dataframe elementwise."
+    },
+    {
+        "section": "DataFrame.pipe(func,\u00a0*args,\u00a0**kwargs)",
+        "content": "Apply chainable functions that expect Series or DataFrames."
+    },
+    {
+        "section": "DataFrame.agg([func,\u00a0axis])",
+        "content": "Aggregate using one or more operations over the specified axis."
+    },
+    {
+        "section": "DataFrame.aggregate([func,\u00a0axis])",
+        "content": "Aggregate using one or more operations over the specified axis."
+    },
+    {
+        "section": "DataFrame.transform(func[,\u00a0axis])",
+        "content": "Callfuncon self producing a DataFrame with the same axis shape as self."
+    },
+    {
+        "section": "DataFrame.groupby([by,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Group DataFrame using a mapper or by a Series of columns."
+    },
+    {
+        "section": "DataFrame.rolling(window[,\u00a0min_periods,\u00a0...])",
+        "content": "Provide rolling window calculations."
+    },
+    {
+        "section": "DataFrame.expanding([min_periods,\u00a0axis,\u00a0method])",
+        "content": "Provide expanding window calculations."
+    },
+    {
+        "section": "DataFrame.ewm([com,\u00a0span,\u00a0halflife,\u00a0alpha,\u00a0...])",
+        "content": "Provide exponentially weighted (EW) calculations."
+    },
+    {
+        "section": "DataFrame.abs()",
+        "content": "Return a Series/DataFrame with absolute numeric value of each element."
+    },
+    {
+        "section": "DataFrame.all([axis,\u00a0bool_only,\u00a0skipna])",
+        "content": "Return whether all elements are True, potentially over an axis."
+    },
+    {
+        "section": "DataFrame.any(*[,\u00a0axis,\u00a0bool_only,\u00a0skipna])",
+        "content": "Return whether any element is True, potentially over an axis."
+    },
+    {
+        "section": "DataFrame.clip([lower,\u00a0upper,\u00a0axis,\u00a0inplace])",
+        "content": "Trim values at input threshold(s)."
+    },
+    {
+        "section": "DataFrame.corr([method,\u00a0min_periods,\u00a0...])",
+        "content": "Compute pairwise correlation of columns, excluding NA/null values."
+    },
+    {
+        "section": "DataFrame.corrwith(other[,\u00a0axis,\u00a0drop,\u00a0...])",
+        "content": "Compute pairwise correlation."
+    },
+    {
+        "section": "DataFrame.count([axis,\u00a0numeric_only])",
+        "content": "Count non-NA cells for each column or row."
+    },
+    {
+        "section": "DataFrame.cov([min_periods,\u00a0ddof,\u00a0numeric_only])",
+        "content": "Compute pairwise covariance of columns, excluding NA/null values."
+    },
+    {
+        "section": "DataFrame.cummax([axis,\u00a0skipna])",
+        "content": "Return cumulative maximum over a DataFrame or Series axis."
+    },
+    {
+        "section": "DataFrame.cummin([axis,\u00a0skipna])",
+        "content": "Return cumulative minimum over a DataFrame or Series axis."
+    },
+    {
+        "section": "DataFrame.cumprod([axis,\u00a0skipna])",
+        "content": "Return cumulative product over a DataFrame or Series axis."
+    },
+    {
+        "section": "DataFrame.cumsum([axis,\u00a0skipna])",
+        "content": "Return cumulative sum over a DataFrame or Series axis."
+    },
+    {
+        "section": "DataFrame.describe([percentiles,\u00a0include,\u00a0...])",
+        "content": "Generate descriptive statistics."
+    },
+    {
+        "section": "DataFrame.diff([periods,\u00a0axis])",
+        "content": "First discrete difference of element."
+    },
+    {
+        "section": "DataFrame.eval(expr,\u00a0*[,\u00a0inplace])",
+        "content": "Evaluate a string describing operations on DataFrame columns."
+    },
+    {
+        "section": "DataFrame.kurt([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return unbiased kurtosis over requested axis."
+    },
+    {
+        "section": "DataFrame.kurtosis([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return unbiased kurtosis over requested axis."
+    },
+    {
+        "section": "DataFrame.max([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return the maximum of the values over the requested axis."
+    },
+    {
+        "section": "DataFrame.mean([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return the mean of the values over the requested axis."
+    },
+    {
+        "section": "DataFrame.median([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return the median of the values over the requested axis."
+    },
+    {
+        "section": "DataFrame.min([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return the minimum of the values over the requested axis."
+    },
+    {
+        "section": "DataFrame.mode([axis,\u00a0numeric_only,\u00a0dropna])",
+        "content": "Get the mode(s) of each element along the selected axis."
+    },
+    {
+        "section": "DataFrame.pct_change([periods,\u00a0fill_method,\u00a0...])",
+        "content": "Fractional change between the current and a prior element."
+    },
+    {
+        "section": "DataFrame.prod([axis,\u00a0skipna,\u00a0numeric_only,\u00a0...])",
+        "content": "Return the product of the values over the requested axis."
+    },
+    {
+        "section": "DataFrame.product([axis,\u00a0skipna,\u00a0...])",
+        "content": "Return the product of the values over the requested axis."
+    },
+    {
+        "section": "DataFrame.quantile([q,\u00a0axis,\u00a0numeric_only,\u00a0...])",
+        "content": "Return values at the given quantile over requested axis."
+    },
+    {
+        "section": "DataFrame.rank([axis,\u00a0method,\u00a0numeric_only,\u00a0...])",
+        "content": "Compute numerical data ranks (1 through n) along axis."
+    },
+    {
+        "section": "DataFrame.round([decimals])",
+        "content": "Round a DataFrame to a variable number of decimal places."
+    },
+    {
+        "section": "DataFrame.sem([axis,\u00a0skipna,\u00a0ddof,\u00a0numeric_only])",
+        "content": "Return unbiased standard error of the mean over requested axis."
+    },
+    {
+        "section": "DataFrame.skew([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return unbiased skew over requested axis."
+    },
+    {
+        "section": "DataFrame.sum([axis,\u00a0skipna,\u00a0numeric_only,\u00a0...])",
+        "content": "Return the sum of the values over the requested axis."
+    },
+    {
+        "section": "DataFrame.std([axis,\u00a0skipna,\u00a0ddof,\u00a0numeric_only])",
+        "content": "Return sample standard deviation over requested axis."
+    },
+    {
+        "section": "DataFrame.var([axis,\u00a0skipna,\u00a0ddof,\u00a0numeric_only])",
+        "content": "Return unbiased variance over requested axis."
+    },
+    {
+        "section": "DataFrame.nunique([axis,\u00a0dropna])",
+        "content": "Count number of distinct elements in specified axis."
+    },
+    {
+        "section": "DataFrame.value_counts([subset,\u00a0normalize,\u00a0...])",
+        "content": "Return a Series containing the frequency of each distinct row in the Dataframe."
+    },
+    {
+        "section": "DataFrame.add_prefix(prefix[,\u00a0axis])",
+        "content": "Prefix labels with stringprefix."
+    },
+    {
+        "section": "DataFrame.add_suffix(suffix[,\u00a0axis])",
+        "content": "Suffix labels with stringsuffix."
+    },
+    {
+        "section": "DataFrame.align(other[,\u00a0join,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Align two objects on their axes with the specified join method."
+    },
+    {
+        "section": "DataFrame.at_time(time[,\u00a0asof,\u00a0axis])",
+        "content": "Select values at particular time of day (e.g., 9:30AM)."
+    },
+    {
+        "section": "DataFrame.between_time(start_time,\u00a0end_time)",
+        "content": "Select values between particular times of the day (e.g., 9:00-9:30 AM)."
+    },
+    {
+        "section": "DataFrame.drop([labels,\u00a0axis,\u00a0index,\u00a0...])",
+        "content": "Drop specified labels from rows or columns."
+    },
+    {
+        "section": "DataFrame.drop_duplicates([subset,\u00a0keep,\u00a0...])",
+        "content": "Return DataFrame with duplicate rows removed."
+    },
+    {
+        "section": "DataFrame.duplicated([subset,\u00a0keep])",
+        "content": "Return boolean Series denoting duplicate rows."
+    },
+    {
+        "section": "DataFrame.equals(other)",
+        "content": "Test whether two objects contain the same elements."
+    },
+    {
+        "section": "DataFrame.filter([items,\u00a0like,\u00a0regex,\u00a0axis])",
+        "content": "Subset the dataframe rows or columns according to the specified index labels."
+    },
+    {
+        "section": "DataFrame.first(offset)",
+        "content": "(DEPRECATED) Select initial periods of time series data based on a date offset."
+    },
+    {
+        "section": "DataFrame.head([n])",
+        "content": "Return the firstnrows."
+    },
+    {
+        "section": "DataFrame.idxmax([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return index of first occurrence of maximum over requested axis."
+    },
+    {
+        "section": "DataFrame.idxmin([axis,\u00a0skipna,\u00a0numeric_only])",
+        "content": "Return index of first occurrence of minimum over requested axis."
+    },
+    {
+        "section": "DataFrame.last(offset)",
+        "content": "(DEPRECATED) Select final periods of time series data based on a date offset."
+    },
+    {
+        "section": "DataFrame.reindex([labels,\u00a0index,\u00a0columns,\u00a0...])",
+        "content": "Conform DataFrame to new index with optional filling logic."
+    },
+    {
+        "section": "DataFrame.reindex_like(other[,\u00a0method,\u00a0...])",
+        "content": "Return an object with matching indices as other object."
+    },
+    {
+        "section": "DataFrame.rename([mapper,\u00a0index,\u00a0columns,\u00a0...])",
+        "content": "Rename columns or index labels."
+    },
+    {
+        "section": "DataFrame.rename_axis([mapper,\u00a0index,\u00a0...])",
+        "content": "Set the name of the axis for the index or columns."
+    },
+    {
+        "section": "DataFrame.reset_index([level,\u00a0drop,\u00a0...])",
+        "content": "Reset the index, or a level of it."
+    },
+    {
+        "section": "DataFrame.sample([n,\u00a0frac,\u00a0replace,\u00a0...])",
+        "content": "Return a random sample of items from an axis of object."
+    },
+    {
+        "section": "DataFrame.set_axis(labels,\u00a0*[,\u00a0axis,\u00a0copy])",
+        "content": "Assign desired index to given axis."
+    },
+    {
+        "section": "DataFrame.set_index(keys,\u00a0*[,\u00a0drop,\u00a0append,\u00a0...])",
+        "content": "Set the DataFrame index using existing columns."
+    },
+    {
+        "section": "DataFrame.tail([n])",
+        "content": "Return the lastnrows."
+    },
+    {
+        "section": "DataFrame.take(indices[,\u00a0axis])",
+        "content": "Return the elements in the givenpositionalindices along an axis."
+    },
+    {
+        "section": "DataFrame.truncate([before,\u00a0after,\u00a0axis,\u00a0copy])",
+        "content": "Truncate a Series or DataFrame before and after some index value."
+    },
+    {
+        "section": "DataFrame.backfill(*[,\u00a0axis,\u00a0inplace,\u00a0...])",
+        "content": "(DEPRECATED) Fill NA/NaN values by using the next valid observation to fill the gap."
+    },
+    {
+        "section": "DataFrame.bfill(*[,\u00a0axis,\u00a0inplace,\u00a0limit,\u00a0...])",
+        "content": "Fill NA/NaN values by using the next valid observation to fill the gap."
+    },
+    {
+        "section": "DataFrame.dropna(*[,\u00a0axis,\u00a0how,\u00a0thresh,\u00a0...])",
+        "content": "Remove missing values."
+    },
+    {
+        "section": "DataFrame.ffill(*[,\u00a0axis,\u00a0inplace,\u00a0limit,\u00a0...])",
+        "content": "Fill NA/NaN values by propagating the last valid observation to next valid."
+    },
+    {
+        "section": "DataFrame.fillna([value,\u00a0method,\u00a0axis,\u00a0...])",
+        "content": "Fill NA/NaN values using the specified method."
+    },
+    {
+        "section": "DataFrame.interpolate([method,\u00a0axis,\u00a0limit,\u00a0...])",
+        "content": "Fill NaN values using an interpolation method."
+    },
+    {
+        "section": "DataFrame.isna()",
+        "content": "Detect missing values."
+    },
+    {
+        "section": "DataFrame.isnull()",
+        "content": "DataFrame.isnull is an alias for DataFrame.isna."
+    },
+    {
+        "section": "DataFrame.notna()",
+        "content": "Detect existing (non-missing) values."
+    },
+    {
+        "section": "DataFrame.notnull()",
+        "content": "DataFrame.notnull is an alias for DataFrame.notna."
+    },
+    {
+        "section": "DataFrame.pad(*[,\u00a0axis,\u00a0inplace,\u00a0limit,\u00a0...])",
+        "content": "(DEPRECATED) Fill NA/NaN values by propagating the last valid observation to next valid."
+    },
+    {
+        "section": "DataFrame.replace([to_replace,\u00a0value,\u00a0...])",
+        "content": "Replace values given into_replacewithvalue."
+    },
+    {
+        "section": "DataFrame.droplevel(level[,\u00a0axis])",
+        "content": "Return Series/DataFrame with requested index / column level(s) removed."
+    },
+    {
+        "section": "DataFrame.pivot(*,\u00a0columns[,\u00a0index,\u00a0values])",
+        "content": "Return reshaped DataFrame organized by given index / column values."
+    },
+    {
+        "section": "DataFrame.pivot_table([values,\u00a0index,\u00a0...])",
+        "content": "Create a spreadsheet-style pivot table as a DataFrame."
+    },
+    {
+        "section": "DataFrame.reorder_levels(order[,\u00a0axis])",
+        "content": "Rearrange index levels using input order."
+    },
+    {
+        "section": "DataFrame.sort_values(by,\u00a0*[,\u00a0axis,\u00a0...])",
+        "content": "Sort by the values along either axis."
+    },
+    {
+        "section": "DataFrame.sort_index(*[,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Sort object by labels (along an axis)."
+    },
+    {
+        "section": "DataFrame.nlargest(n,\u00a0columns[,\u00a0keep])",
+        "content": "Return the firstnrows ordered bycolumnsin descending order."
+    },
+    {
+        "section": "DataFrame.nsmallest(n,\u00a0columns[,\u00a0keep])",
+        "content": "Return the firstnrows ordered bycolumnsin ascending order."
+    },
+    {
+        "section": "DataFrame.swaplevel([i,\u00a0j,\u00a0axis])",
+        "content": "Swap levels i and j in aMultiIndex."
+    },
+    {
+        "section": "DataFrame.stack([level,\u00a0dropna,\u00a0sort,\u00a0...])",
+        "content": "Stack the prescribed level(s) from columns to index."
+    },
+    {
+        "section": "DataFrame.unstack([level,\u00a0fill_value,\u00a0sort])",
+        "content": "Pivot a level of the (necessarily hierarchical) index labels."
+    },
+    {
+        "section": "DataFrame.swapaxes(axis1,\u00a0axis2[,\u00a0copy])",
+        "content": "(DEPRECATED) Interchange axes and swap values axes appropriately."
+    },
+    {
+        "section": "DataFrame.melt([id_vars,\u00a0value_vars,\u00a0...])",
+        "content": "Unpivot a DataFrame from wide to long format, optionally leaving identifiers set."
+    },
+    {
+        "section": "DataFrame.explode(column[,\u00a0ignore_index])",
+        "content": "Transform each element of a list-like to a row, replicating index values."
+    },
+    {
+        "section": "DataFrame.squeeze([axis])",
+        "content": "Squeeze 1 dimensional axis objects into scalars."
+    },
+    {
+        "section": "DataFrame.to_xarray()",
+        "content": "Return an xarray object from the pandas object."
+    },
+    {
+        "section": "DataFrame.T",
+        "content": "The transpose of the DataFrame."
+    },
+    {
+        "section": "DataFrame.transpose(*args[,\u00a0copy])",
+        "content": "Transpose index and columns."
+    },
+    {
+        "section": "DataFrame.assign(**kwargs)",
+        "content": "Assign new columns to a DataFrame."
+    },
+    {
+        "section": "DataFrame.compare(other[,\u00a0align_axis,\u00a0...])",
+        "content": "Compare to another DataFrame and show the differences."
+    },
+    {
+        "section": "DataFrame.join(other[,\u00a0on,\u00a0how,\u00a0lsuffix,\u00a0...])",
+        "content": "Join columns of another DataFrame."
+    },
+    {
+        "section": "DataFrame.merge(right[,\u00a0how,\u00a0on,\u00a0left_on,\u00a0...])",
+        "content": "Merge DataFrame or named Series objects with a database-style join."
+    },
+    {
+        "section": "DataFrame.update(other[,\u00a0join,\u00a0overwrite,\u00a0...])",
+        "content": "Modify in place using non-NA values from another DataFrame."
+    },
+    {
+        "section": "DataFrame.asfreq(freq[,\u00a0method,\u00a0how,\u00a0...])",
+        "content": "Convert time series to specified frequency."
+    },
+    {
+        "section": "DataFrame.asof(where[,\u00a0subset])",
+        "content": "Return the last row(s) without any NaNs beforewhere."
+    },
+    {
+        "section": "DataFrame.shift([periods,\u00a0freq,\u00a0axis,\u00a0...])",
+        "content": "Shift index by desired number of periods with an optional timefreq."
+    },
+    {
+        "section": "DataFrame.first_valid_index()",
+        "content": "Return index for first non-NA value or None, if no non-NA value is found."
+    },
+    {
+        "section": "DataFrame.last_valid_index()",
+        "content": "Return index for last non-NA value or None, if no non-NA value is found."
+    },
+    {
+        "section": "DataFrame.resample(rule[,\u00a0axis,\u00a0closed,\u00a0...])",
+        "content": "Resample time-series data."
+    },
+    {
+        "section": "DataFrame.to_period([freq,\u00a0axis,\u00a0copy])",
+        "content": "Convert DataFrame from DatetimeIndex to PeriodIndex."
+    },
+    {
+        "section": "DataFrame.to_timestamp([freq,\u00a0how,\u00a0axis,\u00a0copy])",
+        "content": "Cast to DatetimeIndex of timestamps, atbeginningof period."
+    },
+    {
+        "section": "DataFrame.tz_convert(tz[,\u00a0axis,\u00a0level,\u00a0copy])",
+        "content": "Convert tz-aware axis to target time zone."
+    },
+    {
+        "section": "DataFrame.tz_localize(tz[,\u00a0axis,\u00a0level,\u00a0...])",
+        "content": "Localize tz-naive index of a Series or DataFrame to target time zone."
+    },
+    {
+        "section": "Flags(obj,\u00a0*,\u00a0allows_duplicate_labels)",
+        "content": "Flags that apply to pandas objects."
+    },
+    {
+        "section": "DataFrame.attrs",
+        "content": "Dictionary of global attributes of this dataset."
+    },
+    {
+        "section": "DataFrame.plot([x,\u00a0y,\u00a0kind,\u00a0ax,\u00a0....])",
+        "content": "DataFrame plotting accessor and method"
+    },
+    {
+        "section": "DataFrame.plot.area([x,\u00a0y,\u00a0stacked])",
+        "content": "Draw a stacked area plot."
+    },
+    {
+        "section": "DataFrame.plot.bar([x,\u00a0y])",
+        "content": "Vertical bar plot."
+    },
+    {
+        "section": "DataFrame.plot.barh([x,\u00a0y])",
+        "content": "Make a horizontal bar plot."
+    },
+    {
+        "section": "DataFrame.plot.box([by])",
+        "content": "Make a box plot of the DataFrame columns."
+    },
+    {
+        "section": "DataFrame.plot.density([bw_method,\u00a0ind])",
+        "content": "Generate Kernel Density Estimate plot using Gaussian kernels."
+    },
+    {
+        "section": "DataFrame.plot.hexbin(x,\u00a0y[,\u00a0C,\u00a0...])",
+        "content": "Generate a hexagonal binning plot."
+    },
+    {
+        "section": "DataFrame.plot.hist([by,\u00a0bins])",
+        "content": "Draw one histogram of the DataFrame's columns."
+    },
+    {
+        "section": "DataFrame.plot.kde([bw_method,\u00a0ind])",
+        "content": "Generate Kernel Density Estimate plot using Gaussian kernels."
+    },
+    {
+        "section": "DataFrame.plot.line([x,\u00a0y])",
+        "content": "Plot Series or DataFrame as lines."
+    },
+    {
+        "section": "DataFrame.plot.pie(**kwargs)",
+        "content": "Generate a pie plot."
+    },
+    {
+        "section": "DataFrame.plot.scatter(x,\u00a0y[,\u00a0s,\u00a0c])",
+        "content": "Create a scatter plot with varying marker point size and color."
+    },
+    {
+        "section": "DataFrame.boxplot([column,\u00a0by,\u00a0ax,\u00a0...])",
+        "content": "Make a box plot from DataFrame columns."
+    },
+    {
+        "section": "DataFrame.hist([column,\u00a0by,\u00a0grid,\u00a0...])",
+        "content": "Make a histogram of the DataFrame's columns."
+    },
+    {
+        "section": "DataFrame.sparse.density",
+        "content": "Ratio of non-sparse points to total (dense) data points."
+    },
+    {
+        "section": "DataFrame.sparse.from_spmatrix(data[,\u00a0...])",
+        "content": "Create a new DataFrame from a scipy sparse matrix."
+    },
+    {
+        "section": "DataFrame.sparse.to_coo()",
+        "content": "Return the contents of the frame as a sparse SciPy COO matrix."
+    },
+    {
+        "section": "DataFrame.sparse.to_dense()",
+        "content": "Convert a DataFrame with sparse values to dense."
+    },
+    {
+        "section": "DataFrame.from_dict(data[,\u00a0orient,\u00a0dtype,\u00a0...])",
+        "content": "Construct DataFrame from dict of array-like or dicts."
+    },
+    {
+        "section": "DataFrame.from_records(data[,\u00a0index,\u00a0...])",
+        "content": "Convert structured or record ndarray to DataFrame."
+    },
+    {
+        "section": "DataFrame.to_orc([path,\u00a0engine,\u00a0index,\u00a0...])",
+        "content": "Write a DataFrame to the ORC format."
+    },
+    {
+        "section": "DataFrame.to_parquet([path,\u00a0engine,\u00a0...])",
+        "content": "Write a DataFrame to the binary parquet format."
+    },
+    {
+        "section": "DataFrame.to_pickle(path,\u00a0*[,\u00a0compression,\u00a0...])",
+        "content": "Pickle (serialize) object to file."
+    },
+    {
+        "section": "DataFrame.to_csv([path_or_buf,\u00a0sep,\u00a0na_rep,\u00a0...])",
+        "content": "Write object to a comma-separated values (csv) file."
+    },
+    {
+        "section": "DataFrame.to_hdf(path_or_buf,\u00a0*,\u00a0key[,\u00a0...])",
+        "content": "Write the contained data to an HDF5 file using HDFStore."
+    },
+    {
+        "section": "DataFrame.to_sql(name,\u00a0con,\u00a0*[,\u00a0schema,\u00a0...])",
+        "content": "Write records stored in a DataFrame to a SQL database."
+    },
+    {
+        "section": "DataFrame.to_dict([orient,\u00a0into,\u00a0index])",
+        "content": "Convert the DataFrame to a dictionary."
+    },
+    {
+        "section": "DataFrame.to_excel(excel_writer,\u00a0*[,\u00a0...])",
+        "content": "Write object to an Excel sheet."
+    },
+    {
+        "section": "DataFrame.to_json([path_or_buf,\u00a0orient,\u00a0...])",
+        "content": "Convert the object to a JSON string."
+    },
+    {
+        "section": "DataFrame.to_html([buf,\u00a0columns,\u00a0col_space,\u00a0...])",
+        "content": "Render a DataFrame as an HTML table."
+    },
+    {
+        "section": "DataFrame.to_feather(path,\u00a0**kwargs)",
+        "content": "Write a DataFrame to the binary Feather format."
+    },
+    {
+        "section": "DataFrame.to_latex([buf,\u00a0columns,\u00a0header,\u00a0...])",
+        "content": "Render object to a LaTeX tabular, longtable, or nested table."
+    },
+    {
+        "section": "DataFrame.to_stata(path,\u00a0*[,\u00a0convert_dates,\u00a0...])",
+        "content": "Export DataFrame object to Stata dta format."
+    },
+    {
+        "section": "DataFrame.to_gbq(destination_table,\u00a0*[,\u00a0...])",
+        "content": "(DEPRECATED) Write a DataFrame to a Google BigQuery table."
+    },
+    {
+        "section": "DataFrame.to_records([index,\u00a0column_dtypes,\u00a0...])",
+        "content": "Convert DataFrame to a NumPy record array."
+    },
+    {
+        "section": "DataFrame.to_string([buf,\u00a0columns,\u00a0...])",
+        "content": "Render a DataFrame to a console-friendly tabular output."
+    },
+    {
+        "section": "DataFrame.to_clipboard(*[,\u00a0excel,\u00a0sep])",
+        "content": "Copy object to the system clipboard."
+    },
+    {
+        "section": "DataFrame.to_markdown([buf,\u00a0mode,\u00a0index,\u00a0...])",
+        "content": "Print DataFrame in Markdown-friendly format."
+    },
+    {
+        "section": "DataFrame.style",
+        "content": "Returns a Styler object."
+    },
+    {
+        "section": "DataFrame.__dataframe__([nan_as_null,\u00a0...])",
+        "content": "Return the dataframe interchange object implementing the interchange protocol."
+    }
+]
