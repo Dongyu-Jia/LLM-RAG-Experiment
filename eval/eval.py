@@ -1,4 +1,6 @@
 import openai
+import torch
+from transformers import AutoTokenizer, AutoModel
 
 class EvalResult:
     def __init__(self, data_dict=None):
@@ -135,8 +137,43 @@ class GenerateQuestionsBasedOnText:
             questions = []
         return questions
 
+def calculate_embedding_similarity(text1, text2):
+    """
+    Calculates the cosine similarity between the embeddings of two input texts.
+
+    Args:
+        text1 (str): The first input text.
+        text2 (str): The second input text.
+
+    Returns:
+        float: The cosine similarity between the embeddings of the two input texts.
+    """
+    # Get the embeddings for the input texts
+    embedding1 = get_sentence_embedding(text1)
+    embedding2 = get_sentence_embedding(text2)
+    # Calculate the cosine similarity between the embeddings
+    similarity = torch.nn.functional.cosine_similarity(embedding1, embedding2, dim=0).item()
+    return similarity
+
+def get_sentence_embedding(sentence):
+    model_name = "sentence-transformers/all-MiniLM-L6-v2"  # A model suitable for sentence embeddings
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModel.from_pretrained(model_name)
+    # Tokenize input and get model output
+    inputs = tokenizer(sentence, return_tensors="pt")
+    outputs = model(**inputs)
+    # Mean pool the token embeddings to get the sentence embedding
+    embedding = outputs.last_hidden_state.mean(dim=1).squeeze()
+    return embedding
 
 def main():
+    # Test the function
+    text1 = "I like cats"
+    text2 = "I love dogs"
+    similarity = calculate_embedding_similarity(text1, text2)
+    print(f"Embedding Similarity: {similarity}")
+
+
     # Create instances of the classes
     eval_api = DirectLLMEvalWithOpenAI()
     generate_api = GenerateQuestionsBasedOnText()
