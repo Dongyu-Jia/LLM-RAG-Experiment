@@ -1,15 +1,41 @@
 #!/bin/bash
 
+# Function to detect OS and architecture
+detect_architecture() {
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        OS="Mac"
+        ARCH=$(uname -m)
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        OS="Linux"
+        ARCH=$(uname -m)
+    else
+        echo "Unsupported OS."
+        exit 1
+    fi
+}
+
 # Check if Miniconda is already installed
 if [ -d "$HOME/miniconda" ]; then
     echo "Miniconda is already installed."
 else
+    detect_architecture
+    
     # Define Miniconda installation URL and installer script name
-    MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
-    INSTALLER_SCRIPT="Miniconda3-latest-Linux-x86_64.sh"
+    if [ "$OS" == "Mac" ]; then
+        if [ "$ARCH" == "arm64" ]; then
+            MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh"
+            INSTALLER_SCRIPT="Miniconda3-latest-MacOSX-arm64.sh"
+        else
+            MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
+            INSTALLER_SCRIPT="Miniconda3-latest-MacOSX-x86_64.sh"
+        fi
+    elif [ "$OS" == "Linux" ]; then
+        MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+        INSTALLER_SCRIPT="Miniconda3-latest-Linux-x86_64.sh"
+    fi
 
     # Download the Miniconda installer script
-    echo "Downloading Miniconda installer..."
+    echo "Downloading Miniconda installer for $OS ($ARCH)..."
     wget $MINICONDA_URL -O $INSTALLER_SCRIPT
 
     # Verify the download
@@ -43,6 +69,9 @@ fi
 
 source ~/.bashrc  # Activate conda
 $HOME/miniconda/bin/conda init bash
+
+# Add conda forge channel to get latest packages
+$HOME/miniconda/bin/conda config --add channels conda-forge
 
 # Check if the 'rag' conda environment exists
 if ! $HOME/miniconda/bin/conda env list | grep -q '^rag\s'; then
