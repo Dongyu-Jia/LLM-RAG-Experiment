@@ -2,5 +2,5 @@ fastapi
 uvicorn
 psycopg2-binary
 numpy
-sentence-transformers
 pgvector
+langchain-huggingface
