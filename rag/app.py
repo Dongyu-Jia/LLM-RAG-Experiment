@@ -33,11 +33,11 @@ def get_documents(chunk_strategy:str, query: str, k: int = 5) -> List[Document]:
     embedding = np.array(embedding_model.embed_query(query))
     table = None
     match chunk_strategy:
-        case "semantic":
+        case "semantic" | "document_semantic_split":      
             table = "document_semantic_split"
-        case "recursive_rst":
+        case "recursive_rst" | "document_recursive_split_rst_separator_1000_50":
             table = "document_recursive_split_rst_separator_1000_50"
-        case "recursive_default":
+        case "recursive_default" | "document_recursive_split_default_300_50":
             table = "document_recursive_split_default_300_50"
         case _:
             table = "document_recursive_split_default_300_50"

@@ -42,6 +42,7 @@ target/
 *.tmp
 *.swp
 *.swo
+*.out
 
 # Keyfiles
 secret.sh

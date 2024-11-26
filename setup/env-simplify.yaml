@@ -1,0 +1,12 @@
+name: rag-simplify
+channels:
+  - defaults
+dependencies:
+  - psycopg2-binary
+  - pytorch  
+  - openai
+  - transformers
+  - pgvector
+  - langchain-huggingface
+  - fastapi
+  - pydantic

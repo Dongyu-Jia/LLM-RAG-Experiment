@@ -57,6 +57,9 @@ class QustionList:
             "questions": self.questions
         }
     
+    def getQuestions(self):
+        return self.questions
+    
     @staticmethod
     def to_json_schema():
         return {
@@ -105,13 +108,14 @@ class DirectLLMEvalWithOpenAI:
         return eval_result
     
 class GenerateQuestionsBasedOnText:
-    def __init__(self):
+    def __init__(self, model_name="gpt-4o-2024-08-06"):
         self.client =  openai.OpenAI();
+        self.model_name = model_name
 
     def generate_questions(self, text):
-        prompt = f"Text: {text}\nGenerate questions can be answered by the text.\n"
+        prompt = f"Text: {text}\nGenerate 3 questions can be answered by the text. Assume whoever answers don't have access to the text, so you should give some context but don't refer to the text, never mention 'according to this text, or the function, the class' etc, use the full name instead if you want to refer to text\n"
         response = self.client.chat.completions.create(
-            model="gpt-4o-2024-08-06",
+            model=self.model_name,
             messages=[
                 {
                     "role": "user",
