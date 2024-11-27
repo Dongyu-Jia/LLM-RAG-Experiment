@@ -217,18 +217,13 @@ def add_topk_rank_result(conn, table_name='your_table_name', debug=False,  idLis
             continue
     
 
-    # case "semantic":
-    # table = "document_semantic_split"
-    # case "recursive_rst":
-    # table = "document_recursive_split_rst_separator_1000_50"
-    # case "recursive_default":
-    # table = "document_recursive_split_default_300_50"
+
     
 def count_and_get_empty_questions(conn, table_name='your_table_name', limit=100):
     cursor = conn.cursor()
     
     try:
-        cursor.execute(f"SELECT id FROM {table_name} WHERE questions IS NULL OR array_length(questions, 1) = 0 limit {limit}")
+        cursor.execute(f"SELECT id FROM {table_name} WHERE questions IS NULL OR array_length(questions, 1) = 0 ORDER BY RANDOM() LIMIT {limit}")
         empty_rows = cursor.fetchall()
 
         cursor.execute(f"SELECT count(*) FROM {table_name} WHERE questions IS NULL OR array_length(questions, 1) = 0 ") 
@@ -245,7 +240,7 @@ def count_and_get_empty_topk_rank(conn, table_name='your_table_name', limit=100)
     cursor = conn.cursor()
     
     try:
-        cursor.execute(f"SELECT id FROM {table_name} WHERE (topk_rank IS NULL OR array_length(topk_rank, 1) = 0) AND questions IS NOT NULL AND array_length(questions, 1) > 0 limit {limit}")
+        cursor.execute(f"SELECT id FROM {table_name} WHERE (topk_rank IS NULL OR array_length(topk_rank, 1) = 0) AND questions IS NOT NULL AND array_length(questions, 1) > 0 ORDER BY RANDOM() limit {limit}")
         empty_rows = cursor.fetchall()
 
         cursor.execute(f"SELECT count(*) FROM {table_name} WHERE (topk_rank IS NULL OR array_length(topk_rank, 1) = 0) AND questions IS NOT NULL AND array_length(questions, 1) > 0") 
@@ -258,12 +253,35 @@ def count_and_get_empty_topk_rank(conn, table_name='your_table_name', limit=100)
     finally:
         cursor.close()
 
+def calculate_average_hit_rate(conn, table_name='your_table_name', topk=5):
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute(f"""
+            SELECT 
+                SUM(CASE WHEN rank BETWEEN 0 AND {topk} THEN 1 ELSE 0 END)::float / COUNT(*)
+            FROM (
+                SELECT unnest(topk_rank) AS rank
+                FROM {table_name}
+                WHERE topk_rank IS NOT NULL AND array_length(topk_rank, 1) > 0
+            ) AS ranks
+        """)
+        average_hit_rate = cursor.fetchone()[0]
+        return average_hit_rate if average_hit_rate is not None else 0.0
+    except Exception as e:
+        raise e
+    finally:
+        cursor.close()
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process table name.')
-    parser.add_argument('table_name', type=str, help='The name of the table to process')
+    parser.add_argument('table_name', type=str, choices=['document_semantic_split', 'document_recursive_split_rst_separator_1000_50', 'document_recursive_split_default_300_50'], help='The name of the table to process')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     parser.add_argument('--fillquestions', action='store_true', help='Fill missing questions')
     parser.add_argument('--filltopkranks', action='store_true', help='Fill missing topk ranks')
+    parser.add_argument('--hitrate', action='store_true', help='The hit rate threshold')
+ 
     
     # Example usage:
     # python retriever_eval.py your_table_name --debug --progress 0.5
@@ -279,7 +297,13 @@ if __name__ == "__main__":
     debug = args.debug
     fill_questions = args.fillquestions
     fill_topk_ranks = args.filltopkranks
+    hit_rate = args.hitrate
 
+    if hit_rate:
+        ks = [1,3,5,10,20]
+        for k in ks:
+            print(f"Average hit rate for top-{k}: {calculate_average_hit_rate(conn, table_name, k)}")
+        sys.exit(0)
 
     if fill_questions:
         add_questions_column(conn, table_name)
