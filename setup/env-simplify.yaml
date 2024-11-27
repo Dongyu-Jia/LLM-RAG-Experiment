@@ -10,3 +10,6 @@ dependencies:
   - langchain-huggingface
   - fastapi
   - pydantic
+  - jupyter  
+  - ipykernel 
+  - matplotlib=3.8.0

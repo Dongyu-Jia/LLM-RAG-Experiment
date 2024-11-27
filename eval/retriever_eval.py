@@ -29,7 +29,7 @@ db_connection_string = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port
 #  source    | character varying(255) |           |          | 
 #  embedding | vector(384)            |           |          |        
 
-def add_questions_column(conn, table_name='your_table_name'):
+def add_questions_column(conn=None, table_name='your_table_name'):
     cursor = conn.cursor()
     
     try:
@@ -50,7 +50,7 @@ def add_questions_column(conn, table_name='your_table_name'):
     finally:
         cursor.close()
 
-def add_topk_rank_column(conn, table_name='your_table_name'):
+def add_topk_rank_column(conn=None, table_name='your_table_name'):
     cursor = conn.cursor()
     
     try:
@@ -72,7 +72,7 @@ def add_topk_rank_column(conn, table_name='your_table_name'):
         cursor.close()
 
 
-def get_row_count(conn, table_name='your_table_name'):
+def get_row_count(conn=None, table_name='your_table_name'):
     cursor = conn.cursor()
     
     try:
@@ -84,7 +84,7 @@ def get_row_count(conn, table_name='your_table_name'):
     finally:
         cursor.close()
 
-def get_max_id(conn, table_name='your_table_name'):
+def get_max_id(conn=None, table_name='your_table_name'):
     cursor = conn.cursor()
     
     try:
@@ -253,7 +253,10 @@ def count_and_get_empty_topk_rank(conn, table_name='your_table_name', limit=100)
     finally:
         cursor.close()
 
-def calculate_average_hit_rate(conn, table_name='your_table_name', topk=5):
+def calculate_average_hit_rate(conn=None, table_name='your_table_name', topk=5):
+    if conn is None:
+        conn = psycopg2.connect(db_connection_string)
+
     cursor = conn.cursor()
     
     try:
@@ -273,6 +276,9 @@ def calculate_average_hit_rate(conn, table_name='your_table_name', topk=5):
     finally:
         cursor.close()
 
+def getConnection():
+    conn = psycopg2.connect(db_connection_string)
+    return conn
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process table name.')
