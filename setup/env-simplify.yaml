@@ -1,9 +1,13 @@
 name: rag-simplify
 channels:
+  - pytorch
+  - nvidia
+  - conda-forge
   - defaults
 dependencies:
   - psycopg2-binary
-  - pytorch  
+  - pytorch
+  - pytorch-cuda=12.4  
   - openai
   - transformers
   - pgvector
@@ -13,3 +17,5 @@ dependencies:
   - jupyter  
   - ipykernel 
   - matplotlib=3.8.0
+  - transformers
+  - gdown
