@@ -1,5 +1,7 @@
 Currently the initial fine-tuning process is set up and experimented in EC2 instance named **`i-0cec5075e93e9ec75 (cs230FT)`** at **`us-west-2`** region. The instance is launched with `**Deep Learning Base OSS Nvidia Driver GPU AMI (Ubuntu 22.04) 20241023`** AMI with **`g4dn.2xlarge`** instance type (Tesla T4 GPU). 
 
+![alt text](image.png)
+
 Below are some commands for reference and used if needed:
 
      # stay up-to-date
