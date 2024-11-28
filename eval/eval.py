@@ -98,7 +98,7 @@ class DirectLLMEvalWithOpenAI:
         self.client = openai.OpenAI();
 
     def evaluate(self, query, answer):
-        prompt = f"Evaluate this answer to question, give overall_score,grammar_score, logic_score, relevance_score with rationale, from scale 1-10, 10 indicate the best, Question: {query}\nAnswer: {answer}\n}\n"
+        prompt = f"Evaluate this answer to question, give overall_score,grammar_score, logic_score, relevance_score with rationale, from scale 1-10, 10 indicate the best, Question: {query}\nAnswer: {answer}\n"
         response = self.client.chat.completions.create(
             model="gpt-4o-2024-08-06",
             messages=[
