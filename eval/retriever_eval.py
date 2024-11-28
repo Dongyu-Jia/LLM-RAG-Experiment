@@ -50,6 +50,19 @@ def add_questions_column(conn=None, table_name='your_table_name'):
     finally:
         cursor.close()
 
+def get_random_questions(conn, table_name='your_table_name', limit=1000):
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute(f"SELECT questions FROM {table_name} WHERE questions IS NOT NULL AND array_length(questions, 1) > 0 ORDER BY RANDOM() LIMIT {limit}")
+        rows = cursor.fetchall()
+        questions = [question for row in rows for question in row[0]]
+        return questions
+    except Exception as e:
+        raise e
+    finally:
+        cursor.close()
+
 def add_topk_rank_column(conn=None, table_name='your_table_name'):
     cursor = conn.cursor()
     

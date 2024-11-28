@@ -44,7 +44,27 @@ class EvalResult:
             "required": ["overall_score", "overall_rationale", "grammar_score", "grammar_rationale", "logic_score", "logic_rationale", "relevance_score", "relevance_rationale"],
             "additionalProperties": False,
         }
-    
+
+def average_eval_results(eval_results):
+    if not eval_results:
+        return None
+
+    total_scores = {
+        "overall_score": 0,
+        "grammar_score": 0,
+        "logic_score": 0,
+        "relevance_score": 0
+    }
+    count = len(eval_results)
+
+    for result in eval_results:
+        total_scores["overall_score"] += result.overall_score
+        total_scores["grammar_score"] += result.grammar_score
+        total_scores["logic_score"] += result.logic_score
+        total_scores["relevance_score"] += result.relevance_score
+
+    average_scores = {key: value / count for key, value in total_scores.items()}
+    return EvalResult(average_scores)
     
 class QustionList:
     def __init__(self, data_dict=None):
@@ -77,8 +97,8 @@ class DirectLLMEvalWithOpenAI:
     def __init__(self):
         self.client = openai.OpenAI();
 
-    def evaluate(self, query, context):
-        prompt = f"Query: {query}\nContext: {context}\nReturn JSON: {EvalResult().to_dict()}\n"
+    def evaluate(self, query, answer):
+        prompt = f"Evaluate this answer to question, give overall_score,grammar_score, logic_score, relevance_score with rationale, from scale 1-10, 10 indicate the best, Question: {query}\nAnswer: {answer}\n}\n"
         response = self.client.chat.completions.create(
             model="gpt-4o-2024-08-06",
             messages=[
