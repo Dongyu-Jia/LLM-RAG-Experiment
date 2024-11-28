@@ -14,6 +14,10 @@ class EvalResult:
         self.logic_rationale = data_dict.get("logic_rationale", None)
         self.relevance_score = data_dict.get("relevance_score", None)
         self.relevance_rationale = data_dict.get("relevance_rationale", None)
+    
+    def setContext(self, questions, answers):
+        self.questions = questions
+        self.answers = answers
 
     def to_dict(self):
         return {
@@ -44,6 +48,8 @@ class EvalResult:
             "required": ["overall_score", "overall_rationale", "grammar_score", "grammar_rationale", "logic_score", "logic_rationale", "relevance_score", "relevance_rationale"],
             "additionalProperties": False,
         }
+    
+
 
 def average_eval_results(eval_results):
     if not eval_results:

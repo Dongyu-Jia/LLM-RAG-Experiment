@@ -9,13 +9,23 @@ folder_a_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'r
 sys.path.insert(0, folder_a_path)  
 
 import app as rag_app
+import random
+import argparse
 
 class Evaluator:
     def __init__(self, model_name:str):
-        self.tokenizer = AutoTokenizer.from_pretrained("llama3_2_batch_2_tuned_model_tokenizer/")
-        self.model = AutoModelForCausalLM.from_pretrained(model_name)
+        if model_name.endswith(".pt") or model_name.endswith(".pth"):
+            self.model = torch.load(model_name, map_location='cpu')
+            self.tokenizer = AutoTokenizer.from_pretrained("finetune/llama3_2_batch_2_tuned_model_tokenizer/")
+        else:
+            self.model = AutoModelForCausalLM.from_pretrained(model_name)
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.EvalResults = []
         self.llmEvaluator=eval.DirectLLMEvalWithOpenAI()
+    
+    def loadQuestions(self, filename:str):
+        with open(filename, 'r') as file:
+            self.questions = file.readlines()
 
     def clearEvalResults(self):
         self.EvalResults = []
@@ -24,10 +34,14 @@ class Evaluator:
         result = eval.average_eval_results(self.EvalResults)
         print(result)
         return result
+    
+    def evalAll(self, questions_filename="questions.txt", userag_table_name:str=None, evalNum:int=100):
+        self.loadQuestions(questions_filename)
+        for question in self.questions[0:evalNum]:
+            self.eval(question, userag_table_name)
+        return eval.average_eval_results(self.EvalResults)
 
     def eval(self, question, userag_table_name:str=None)->eval.EvalResult:
-
-
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         input_text = question         
         if userag_table_name:
@@ -51,7 +65,30 @@ class Evaluator:
 
             # Decode the token ids to text
             output_text = self.tokenizer.decode(token_ids[0], skip_special_tokens=True)
-        self.EvalResults.append(self.llmEvaluator.eval(question, output_text))
+
+
+        # Print only if random number is less than 0.1
         
-    
+        print(f"Question: {question}\n")
+        print(f"Answer: {output_text}\n")
+        eval_result = self.llmEvaluator.evaluate(question, output_text)
+        print(f"Eval Result: {eval_result.to_dict()}\n")
+
+        self.EvalResults.append(eval_result)
+        return self.EvalResults[-1]
+        
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="Evaluate a language model.")
+    parser.add_argument("--model_name", type=str, required=True, help="The name or path of the model to evaluate.")
+    parser.add_argument("--questions_filename", type=str, default="eval/questions.txt", help="The filename containing the questions.")
+    parser.add_argument("--userag_table_name", type=str, help="The userag table name for context retrieval.")
+    parser.add_argument("--eval_num", type=int, default=10, help="The number of questions to evaluate.")
+
+    args = parser.parse_args()
+
+    evaluator = Evaluator(args.model_name)
+    r=evaluator.evalAll(questions_filename=args.questions_filename, userag_table_name=args.userag_table_name, evalNum=args.eval_num)
+    print(r.to_dict())
     
