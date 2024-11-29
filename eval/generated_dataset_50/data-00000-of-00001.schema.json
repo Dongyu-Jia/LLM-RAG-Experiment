@@ -1,0 +1,18 @@
+{
+  "fields": [
+    {
+      "name": "prompt",
+      "type": {},
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "completion",
+      "type": {},
+      "nullable": true,
+      "metadata": {}
+    }
+  ],
+  "metadata": {},
+  "dictionaries": {}
+}

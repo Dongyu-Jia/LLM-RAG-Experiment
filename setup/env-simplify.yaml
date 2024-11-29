@@ -19,3 +19,5 @@ dependencies:
   - matplotlib=3.8.0
   - transformers
   - gdown
+  - bitsandbytes
+  - peft

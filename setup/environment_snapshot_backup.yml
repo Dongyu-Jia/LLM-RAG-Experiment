@@ -9,6 +9,7 @@ channels:
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=2_kmp_llvm
+  - accelerate=1.1.1=pyhff2d567_0
   - aiohappyeyeballs=2.4.3=py312h06a4308_0
   - aiohttp=3.10.5=py312h5eee18b_0
   - aiosignal=1.2.0=pyhd3eb1b0_0
@@ -41,6 +42,7 @@ dependencies:
   - azure-storage-files-datalake-cpp=12.12.0=ha633028_1
   - babel=2.11.0=py312h06a4308_0
   - beautifulsoup4=4.12.3=py312h06a4308_0
+  - bitsandbytes=0.44.1=cuda118_py312h32b3722_1
   - blas=1.0=openblas
   - bleach=6.2.0=py312h06a4308_0
   - bottleneck=1.4.2=py312ha883a20_0
@@ -62,12 +64,13 @@ dependencies:
   - cuda-libraries=12.4.1=0
   - cuda-nvrtc=12.4.127=0
   - cuda-nvtx=12.4.127=0
-  - cuda-opencl=12.6.77=0
+  - cuda-opencl=12.4.127=0
   - cuda-runtime=12.4.1=0
-  - cuda-version=12.6=3
-  - cudnn=9.3.0.75=h93bb076_0
+  - cuda-version=11.8=h70ddcb2_3
+  - cudatoolkit=11.8.0=h4ba93d1_13
+  - cudnn=9.3.0.75=cuda11.8
   - cycler=0.11.0=pyhd3eb1b0_0
-  - datasets=2.19.1=py312h06a4308_0
+  - datasets=3.1.0=pyhff2d567_0
   - dbus=1.13.18=hb2f20db_0
   - debugpy=1.6.7=py312h6a678d5_0
   - decorator=5.1.1=pyhd3eb1b0_0
@@ -138,6 +141,7 @@ dependencies:
   - jupyterlab_pygments=0.1.2=py_0
   - jupyterlab_server=2.27.3=py312h06a4308_0
   - jupyterlab_widgets=3.0.10=py312h06a4308_0
+  - kernel-headers_linux-64=3.10.0=he073ed8_18
   - kiwisolver=1.4.4=py312h6a678d5_0
   - krb5=1.21.3=h143b758_0
   - lame=3.100=h7b6447c_0
@@ -165,9 +169,9 @@ dependencies:
   - libcrc32c=1.1.2=h6a678d5_0
   - libcublas=12.4.5.8=0
   - libcufft=11.2.1.3=0
-  - libcufile=1.11.1.6=0
+  - libcufile=1.9.1.3=0
   - libcups=2.3.3=h4637d8d_4
-  - libcurand=10.3.7.77=0
+  - libcurand=10.3.5.147=0
   - libcurl=8.10.1=hbbe4b11_0
   - libcusolver=11.6.1.9=0
   - libcusparse=12.3.1.170=0
@@ -204,12 +208,12 @@ dependencies:
   - libjpeg-turbo=3.0.3=h5eee18b_0
   - liblapack=3.9.0=16_linux64_openblas
   - libllvm19=19.1.4=ha7bfdaf_1
-  - libmagma=2.8.0=h0af6554_0
-  - libmagma_sparse=2.8.0=h0af6554_0
+  - libmagma=2.8.0=hfdb99dd_0
+  - libmagma_sparse=2.8.0=h9ddd185_0
   - libnghttp2=1.64.0=h161d5f1_0
   - libnpp=12.2.5.30=0
   - libnsl=2.0.1=hd590300_0
-  - libnvfatbin=12.6.77=0
+  - libnvfatbin=12.4.127=0
   - libnvjitlink=12.4.127=0
   - libnvjpeg=12.3.1.117=0
   - libogg=1.3.5=h27cfd23_1
@@ -230,7 +234,7 @@ dependencies:
   - libsystemd0=256.7=h2774228_1
   - libthrift=0.21.0=h0e7cc3e_0
   - libtiff=4.7.0=he137b08_1
-  - libtorch=2.5.1=cuda120_h6f417b9_303
+  - libtorch=2.5.1=cuda118_hb34f2e8_303
   - libutf8proc=2.8.0=h166bdaf_0
   - libuuid=2.38.1=h0b41bf4_0
   - libuv=1.49.2=hb9d3cd8_0
@@ -263,7 +267,7 @@ dependencies:
   - nbconvert=7.16.4=py312h06a4308_0
   - nbconvert-core=7.16.4=pyhd8ed1ab_0
   - nbformat=5.10.4=py312h06a4308_0
-  - nccl=2.23.4.1=h2b5d15b_3
+  - nccl=2.23.4.1=h03a54cd_3
   - ncurses=6.5=he02047a_1
   - nest-asyncio=1.6.0=py312h06a4308_0
   - networkx=3.4.2=pyh267e887_2
@@ -274,7 +278,7 @@ dependencies:
   - numexpr=2.10.1=py312hd28fd6d_0
   - numpy=1.26.4=py312h2809609_0
   - numpy-base=1.26.4=py312he1a6c75_0
-  - openai=1.55.2=pyhd8ed1ab_0
+  - openai=1.55.3=pyhd8ed1ab_0
   - openjpeg=2.5.2=he7f1fd0_0
   - openssl=3.4.0=hb9d3cd8_0
   - orc=2.0.3=he039a57_0
@@ -285,6 +289,7 @@ dependencies:
   - pandocfilters=1.5.0=pyhd3eb1b0_0
   - parso=0.8.3=pyhd3eb1b0_0
   - pcre2=10.44=hba22ea6_2
+  - peft=0.13.2=pyhd8ed1ab_0
   - pexpect=4.8.0=pyhd3eb1b0_3
   - pillow=11.0.0=py312h7b63e92_0
   - pip=24.2=py312h06a4308_0
@@ -321,7 +326,7 @@ dependencies:
   - python-tzdata=2023.3=pyhd3eb1b0_0
   - python-xxhash=2.0.2=py312h5eee18b_1
   - python_abi=3.12=5_cp312
-  - pytorch=2.5.1=cuda120_py312hd285dae_303
+  - pytorch=2.5.1=cuda118_py312h919e71f_303
   - pytorch-cuda=12.4=hc786d27_7
   - pytz=2024.1=py312h06a4308_0
   - pyyaml=6.0.2=py312h5eee18b_0
@@ -356,6 +361,7 @@ dependencies:
   - stack_data=0.2.0=pyhd3eb1b0_0
   - starlette=0.41.3=pyh7900ff3_0
   - sympy=1.13.3=pyh2585a3b_104
+  - sysroot_linux-64=2.17=h4a8ded7_18
   - tbb=2021.13.0=h84d6215_0
   - tenacity=8.5.0=pyhd8ed1ab_0
   - terminado=0.17.1=py312h06a4308_0
@@ -412,4 +418,5 @@ dependencies:
   - zstd=1.5.6=ha6fb4c9_0
   - pip:
       - pgvector==0.3.6
+      - trl==0.12.1
 prefix: /home/ubuntu/miniconda/envs/rag-simplify
