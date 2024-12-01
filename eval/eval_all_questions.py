@@ -22,7 +22,7 @@ def main():
     evaluator = generator_eval.Evaluator("../finetune/Llama-3.2-1B-Instruct-SFT")
 
     # Define the number of questions to evaluate at a time
-    batch_size = 5
+    batch_size = 1
 
     # Evaluate questions in batches
     for start in range(0, len(df['question']), batch_size):
@@ -43,7 +43,7 @@ def main():
             'baseline_with_rag_eval': pd.Series(dtype='object'),
             'finetune_with_rag_eval': pd.Series(dtype='object'),
         })
-        df_batch['question'] = df['question'][start:end]
+        df_batch['question'] = df['question'][start:end].reset_index(drop=True)
         
         for i, q in enumerate(df_batch['question']):
             try:

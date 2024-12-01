@@ -200,7 +200,7 @@ def search_question_and_get_order(conn, table_name: str, question: str):
     cursor = conn.cursor()
     
     try:
-        cursor.execute(f"SELECT id FROM {table_name} WHERE %s = ANY(questions)", (question,))
+        cursor.execute(f"SELECT id FROM {table_name} WHERE EXISTS (SELECT 1 FROM unnest(questions) AS q WHERE q LIKE %s)", (question + '%',))
         row = cursor.fetchone()
         if row:
             row_id = row[0]
