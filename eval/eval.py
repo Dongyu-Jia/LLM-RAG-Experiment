@@ -52,9 +52,6 @@ class EvalResult:
 
 
 def average_eval_results(eval_results):
-    if not eval_results:
-        return None
-
     total_scores = {
         "overall_score": 0,
         "grammar_score": 0,

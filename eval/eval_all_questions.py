@@ -22,7 +22,7 @@ def main():
     evaluator = generator_eval.Evaluator("../finetune/Llama-3.2-1B-Instruct-SFT")
 
     # Define the number of questions to evaluate at a time
-    batch_size = 1
+    batch_size = 5
 
     # Evaluate questions in batches
     for start in range(0, len(df['question']), batch_size):
