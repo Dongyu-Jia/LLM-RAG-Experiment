@@ -8,18 +8,39 @@ folder_a_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'r
 # Add the folder path to sys.path  
 sys.path.insert(0, folder_a_path)  
 
+import torch
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    pipeline,
+)
+from peft import LoraConfig, PeftModel
+from trl import SFTTrainer
+
+
 import app as rag_app
-import random
 import argparse
 
 class Evaluator:
-    def __init__(self, model_name:str):
-        if model_name.endswith(".pt") or model_name.endswith(".pth"):
-            self.model = torch.load(model_name, map_location='cpu')
-            self.tokenizer = AutoTokenizer.from_pretrained("finetune/llama3_2_batch_2_tuned_model_tokenizer/")
-        else:
-            self.model = AutoModelForCausalLM.from_pretrained(model_name)
-            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+    def __init__(self, peftModel:str):
+        base_model_name = "unsloth/Llama-3.2-1B-Instruct"
+        new_model = peftModel
+        device_map = {"": 0}
+
+        self.base_model = AutoModelForCausalLM.from_pretrained(
+            base_model_name,
+            low_cpu_mem_usage=True,
+            return_dict=True,
+            torch_dtype=torch.float16,
+            device_map=device_map,
+        )
+        new_model_path = os.path.abspath(new_model)
+        self.model = PeftModel.from_pretrained(self.base_model, new_model_path)
+        self.model = self.model.merge_and_unload()
+
+        self.tokenizer = AutoTokenizer.from_pretrained(base_model_name, trust_remote_code=True)
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.tokenizer.padding_side = "right"
         self.EvalResults = []
         self.llmEvaluator=eval.DirectLLMEvalWithOpenAI()
     
@@ -35,47 +56,53 @@ class Evaluator:
         print(result)
         return result
     
-    def evalAll(self, questions_filename="questions.txt", userag_table_name:str=None, evalNum:int=100):
+    def evalAll(self, questions_filename="questions.txt", userag_table_name:str=None, evalNum:int=100, useBaseModel=True):
         self.loadQuestions(questions_filename)
         for question in self.questions[0:evalNum]:
-            self.eval(question, userag_table_name)
+            self.eval(question, userag_table_name, useBaseModel)
         return eval.average_eval_results(self.EvalResults)
+    
+    def getRagContext(self, userag_table_name:str=None, question="", limit=5):
+        input_text = ""
+        topk_rank_result = rag_app.get_documents(userag_table_name, question, limit)
+        for i, result in enumerate(topk_rank_result):
+            if result.text in input_text:
+                continue
+            input_text += f"Context {i+1}: {result.text}\n"
+        return input_text
 
-    def eval(self, question, userag_table_name:str=None)->eval.EvalResult:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    def eval(self, question, userag_table_name:str=None, useBaseModel=True)->eval.EvalResult:
         input_text = question         
         if userag_table_name:
-            input_text += + "I will also provide some contexts, use it only when it is helpful(contexts can be not relavant at all)."
-            topk_rank_result = rag_app.get_documents(userag_table_name, question, 5)
-            for i, result in enumerate(topk_rank_result):
-                input_text += f"Context {i+1}: {result['text']}"
+            input_text += "I will also provide some contexts, use it only when it is helpful(contexts can be not relavant at all). Answer within 400 words.\n"
+            input_text += self.getRagContext(userag_table_name, question, 5) 
         
-        inputs = self.tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True, padding="max_length")
-        inputs = {key: value.to(device) for key, value in inputs.items()}
+        prompt = input_text
 
-        model = self.model
-        model.to(device)
-        model.eval()
-
-        with torch.no_grad():
-            outputs = model(**inputs)
-
-            # Convert logits to token ids (if applicable)
-            token_ids = torch.argmax(outputs.logits, dim=-1)
-
-            # Decode the token ids to text
-            output_text = self.tokenizer.decode(token_ids[0], skip_special_tokens=True)
-
+        if not useBaseModel:
+            modelForEval = self.model
+        else:
+            modelForEval = self.base_model
+        max_length = 5000
+        prompt_words = prompt.split()
+        if len(prompt_words) > max_length:
+            prompt = ' '.join(prompt_words[:2800])
+        pipe = pipeline(task="text-generation", model=modelForEval, tokenizer=self.tokenizer, max_length=max_length)
+        result = pipe(f"<s>[INST] {prompt} [/INST]")
+        output_text = result[0]["generated_text"]
 
         # Print only if random number is less than 0.1
         
-        print(f"Question: {question}\n")
-        print(f"Answer: {output_text}\n")
+        PRINT_PROB = 0.1
         eval_result = self.llmEvaluator.evaluate(question, output_text)
-        print(f"Eval Result: {eval_result.to_dict()}\n")
+        if torch.rand(1).item() < PRINT_PROB:
+            print(f"Question: {prompt}\n")
+            print(f"Answer: {output_text}\n")
+            print(f"Eval Result: {eval_result.to_dict()}\n")
 
         self.EvalResults.append(eval_result)
-        return self.EvalResults[-1]
+        return output_text, self.EvalResults[-1]
         
 
 if __name__ == "__main__":
@@ -84,7 +111,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, required=True, help="The name or path of the model to evaluate.")
     parser.add_argument("--questions_filename", type=str, default="eval/questions.txt", help="The filename containing the questions.")
     parser.add_argument("--userag_table_name", type=str, help="The userag table name for context retrieval.")
-    parser.add_argument("--eval_num", type=int, default=10, help="The number of questions to evaluate.")
+    parser.add_argument("--eval_num", type=int, default=1, help="The number of questions to evaluate.")
 
     args = parser.parse_args()
 

@@ -97,7 +97,29 @@ class QustionList:
             "additionalProperties": False,
         }
     
+class OpenAIChatCompletionWrapper:
+    def __init__(self, model_name="gpt-4o-mini"):
+        self.client = openai.OpenAI()
+        self.model_name = model_name
+
+    def complete(self, prompt):
+        response = self.client.chat.completions.create(
+            model=self.model_name,
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                },
+            ],
+        )
+        return response.choices[0].message.content.strip()
     
+    def returnTF(self, prompt):
+        result = self.complete(prompt+ " Please return a single boolean value, either 'yes' or 'no'.")   
+        if "yes" in result.lower() or "true" in result.lower():
+            return True
+        else:
+            return False
 
 class DirectLLMEvalWithOpenAI:
     def __init__(self):

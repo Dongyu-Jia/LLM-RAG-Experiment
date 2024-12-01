@@ -196,6 +196,26 @@ def process_and_insert_questions(conn, model_name="your_model_name", table_name=
             print(f"Error processing row {row_id}: {e}")
             continue
 
+def search_question_and_get_order(conn, table_name: str, question: str):
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute(f"SELECT id FROM {table_name} WHERE %s = ANY(questions)", (question,))
+        row = cursor.fetchone()
+        if row:
+            row_id = row[0]
+            topk_rank_result = rag_app.get_documents(table_name, question, 20)
+            topk_doc_id = [doc.id for doc in topk_rank_result]
+            doc_index = next((index for index, doc in enumerate(topk_rank_result) if doc.id == row_id), -1)
+            return doc_index
+        else:
+            return -1
+    except Exception as e:
+        raise e
+    finally:
+        cursor.close()
+
+
 def add_topk_rank_result(conn, table_name='your_table_name', debug=False,  idList=[]):
     max_id = get_max_id(conn, table_name)
     rangeList = range(1, max_id+1)
