@@ -285,7 +285,7 @@ dependencies:
   - orjson=3.10.12=py312h12e396e_0
   - overrides=7.4.0=py312h06a4308_0
   - packaging=24.1=py312h06a4308_0
-  - pandas=2.2.3=py312h6a678d5_0
+  - pandas=2.2.3=py312hf9745cd_1
   - pandocfilters=1.5.0=pyhd3eb1b0_0
   - parso=0.8.3=pyhd3eb1b0_0
   - pcre2=10.44=hba22ea6_2
